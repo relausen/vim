@@ -36,6 +36,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
 " Python
 Plugin 'davidhalter/jedi-vim'
+" SWIG interface files
+Plugin 'vim-scripts/SWIG-syntax'
 
 " VCS
 " Git
@@ -126,6 +128,9 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 
+  autocmd BufNewFile,BufRead *.i set filetype=swig
+  autocmd BufNewFile,BufRead *.swg set filetype=swig
+  autocmd BufNewFile,BufRead *.swig set filetype=swig
   augroup END
 
 else

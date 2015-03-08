@@ -54,6 +54,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
+" -Themes
+Plugin 'morhetz/gruvbox'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -147,8 +150,18 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" REL stuff
+" Setup theme
+set t_Co=256
+set background=dark
+colorscheme gruvbox
+
+" Merge vim and OS clipboard
+set clipboard=unnamed
+
+" Show line numbers
 set number
+
+" Sensible tabs
 set tabstop=4
 set shiftwidth=4
 

@@ -155,6 +155,10 @@ set t_Co=256
 set background=dark
 colorscheme gruvbox
 
+" Change vim's stupid tab completion to a more sensible behaviour
+set wildmode=longest,list,full
+set wildmenu
+
 " Merge vim and OS clipboard
 set clipboard=unnamed
 
@@ -175,5 +179,5 @@ augroup END
 " Reload .vimrc after edit
 augroup myvimrc
   au!
-  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+  au BufWritePost vimrc,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END

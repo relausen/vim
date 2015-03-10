@@ -177,6 +177,12 @@ set number
 set tabstop=4
 set shiftwidth=4
 
+" Recognize QMake .pro and .pri files
+augroup qmake
+  autocmd BufNewFile,BufRead *.pro set filetype=qmake
+  autocmd BufNewFile,BufRead *.pri set filetype=qmake
+augroup END
+  
 " Recognize SWIG files
 augroup swig
   autocmd BufNewFile,BufRead *.i set filetype=swig

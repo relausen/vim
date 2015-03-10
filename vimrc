@@ -132,6 +132,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'artoj/qmake-syntax-vim'
+Plugin 'Auto-Pairs'
 
 " -Themes
 Plugin 'morhetz/gruvbox'
@@ -150,10 +151,17 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 " Setup theme
 set t_Co=256
 set background=dark
 colorscheme gruvbox
+
+" Setup airline
+" set guifont=Sauce\ Code\ Powerline\ Light
+let g:airline_powerline_fonts = 1
+set laststatus=2
+let g:airline#extensions#branch#enabled = 1
 
 " Change vim's stupid tab completion to a more sensible behaviour
 set wildmode=longest,list,full

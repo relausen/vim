@@ -131,6 +131,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'artoj/qmake-syntax-vim'
 
 " -Themes
 Plugin 'morhetz/gruvbox'

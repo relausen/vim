@@ -163,7 +163,7 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 set noshowmode
-set timeoutlen=50
+" set timeoutlen=50
 
 " Change vim's stupid tab completion to a more sensible behaviour
 set wildmode=longest,list,full
@@ -178,6 +178,13 @@ set number
 " Sensible tabs
 set tabstop=4
 set shiftwidth=4
+
+" C++ setup
+set errorformat^=%-G%f:%l:\ warning:%m
+augroup make
+	autocmd QuickFixCmdPost [^l]* nested cwindow
+	autocmd QuickFixCmdPost    l* nested lwindow
+augroup END
 
 " Recognize QMake .pro and .pri files
 augroup qmake

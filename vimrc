@@ -135,6 +135,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'artoj/qmake-syntax-vim'
 Plugin 'Auto-Pairs'
+Plugin 'terryma/vim-multiple-cursors'
 
 " -Themes
 Plugin 'morhetz/gruvbox'

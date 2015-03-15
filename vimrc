@@ -130,6 +130,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
@@ -185,18 +186,21 @@ set shiftwidth=4
 " C++ setup
 set errorformat^=%-G%f:%l:\ warning:%m
 augroup make
-	autocmd QuickFixCmdPost [^l]* nested cwindow
-	autocmd QuickFixCmdPost    l* nested lwindow
+  au!
+  autocmd QuickFixCmdPost [^l]* nested cwindow
+  autocmd QuickFixCmdPost    l* nested lwindow
 augroup END
 
 " Recognize QMake .pro and .pri files
 augroup qmake
+  au!
   autocmd BufNewFile,BufRead *.pro set filetype=qmake
   autocmd BufNewFile,BufRead *.pri set filetype=qmake
 augroup END
   
 " Recognize SWIG files
 augroup swig
+  au!
   autocmd BufNewFile,BufRead *.i set filetype=swig
   autocmd BufNewFile,BufRead *.swg set filetype=swig
   autocmd BufNewFile,BufRead *.swig set filetype=swig

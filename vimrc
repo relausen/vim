@@ -156,6 +156,21 @@ call vundle#end()            " required
 " Set path to something sensible
 set path=.,,**
 
+" Allow switching away from edited buffer
+set hidden
+
+" Convenience keys for opening file in same dir as file in buffer
+" Mnemonics:
+" Edit in Window
+" Edit in Split (horisontal)
+" Edit in Vertical split
+" Edit in Tab
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+
 " Setup theme
 set t_Co=256
 set background=dark
@@ -206,6 +221,9 @@ augroup swig
   autocmd BufNewFile,BufRead *.swig set filetype=swig
 augroup END
 
+" .vimrc editing
+" Open .vimrc in new tab
+nmap <leader>v :tabedit $MYVIMRC<CR>
 " Reload .vimrc after edit
 augroup myvimrc
   au!

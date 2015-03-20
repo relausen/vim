@@ -1,4 +1,4 @@
-let mapleader=","
+let mapleader = ","
 
 " An example for a vimrc file.
 "
@@ -190,6 +190,9 @@ set wildmenu
 
 " Merge vim and OS clipboard
 set clipboard=unnamed
+
+" Make it easier to remove highlights after search
+nnoremap <silent> <leader>n :nohlsearch<CR>
 
 " Show line numbers
 set number

@@ -137,6 +137,7 @@ Plugin 'bling/vim-airline'
 Plugin 'artoj/qmake-syntax-vim'
 Plugin 'Auto-Pairs'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'godlygeek/tabular'
 
 " -Themes
 Plugin 'morhetz/gruvbox'

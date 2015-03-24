@@ -111,6 +111,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Languages
+" Syntax checker
+Plugin 'scrooloose/syntastic'
 " golang
 Plugin 'fatih/vim-go'
 " Python

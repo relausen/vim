@@ -168,7 +168,7 @@ set hidden
 " Edit in Split (horisontal)
 " Edit in Vertical split
 " Edit in Tab
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
@@ -226,6 +226,14 @@ augroup swig
   autocmd BufNewFile,BufRead *.swg set filetype=swig
   autocmd BufNewFile,BufRead *.swig set filetype=swig
 augroup END
+
+" Key bindings for bubbling text
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
 
 " .vimrc editing
 " Open .vimrc in new tab

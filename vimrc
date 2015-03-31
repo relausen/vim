@@ -212,6 +212,9 @@ augroup make
   autocmd QuickFixCmdPost    l* nested lwindow
 augroup END
 
+" Write before commands
+set autowrite
+
 " Recognize QMake .pro and .pri files
 augroup qmake
   au!

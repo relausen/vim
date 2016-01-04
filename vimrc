@@ -119,6 +119,8 @@ Plugin 'fatih/vim-go'
 Plugin 'davidhalter/jedi-vim'
 " SWIG interface files
 Plugin 'vim-scripts/SWIG-syntax'
+" Doxygen
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 " VCS
 " Git
@@ -211,6 +213,9 @@ augroup make
   autocmd QuickFixCmdPost [^l]* nested cwindow
   autocmd QuickFixCmdPost    l* nested lwindow
 augroup END
+" Doxygen setup
+let g:DoxygenToolkit_briefTag_pre=""
+map <leader>d :Dox<CR>
 
 " Recognize QMake .pro and .pri files
 augroup qmake

@@ -213,6 +213,8 @@ augroup make
   autocmd QuickFixCmdPost [^l]* nested cwindow
   autocmd QuickFixCmdPost    l* nested lwindow
 augroup END
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
 " Doxygen setup
 let g:DoxygenToolkit_briefTag_pre=""
 map <leader>d :Dox<CR>

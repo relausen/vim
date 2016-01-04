@@ -159,7 +159,7 @@ call vundle#end()            " required
 " Put your non-Plugin stuff after this line
 
 " Set path to something sensible
-set path=.,,**
+set path=.,/usr/local/include,,**
 
 " Allow switching away from edited buffer
 set hidden

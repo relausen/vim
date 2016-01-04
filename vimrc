@@ -202,6 +202,13 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 " Show line numbers
 set number
 
+" Text width
+set textwidth=95
+" augroup textwidth_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+"   autocmd BufEnter * match OverLength /\%96v.*/
+" augroup END
+
 " Sensible tabs
 set tabstop=4
 set shiftwidth=4

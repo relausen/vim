@@ -142,6 +142,7 @@ Plugin 'artoj/qmake-syntax-vim'
 Plugin 'Auto-Pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-scripts/argtextobj.vim.git'
 
 " -Themes
 Plugin 'morhetz/gruvbox'

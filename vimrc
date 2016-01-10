@@ -160,6 +160,9 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Disable Auto Pairs AutoPairsFastWrap to make letter 'å' work
+let g:AutoPairsShortcutFastWrap='<Nop>'
+
 " Set path to something sensible
 set path=.,/usr/local/include,,**
 

@@ -1,5 +1,9 @@
 let mapleader = ","
 
+" Easier access to [ and ] on Danish keyboards
+nmap æ [
+nmap ø ]
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>

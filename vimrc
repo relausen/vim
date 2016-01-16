@@ -223,13 +223,14 @@ set tabstop=4
 set shiftwidth=4
 
 " C++ setup
-set errorformat^=%-G%f:%l:\ warning:%m
-augroup make
-  au!
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
-augroup END
+" set errorformat^=%-G%f:%l:\ warning:%m
+" augroup make
+"   au!
+"   autocmd QuickFixCmdPost [^l]* nested cwindow
+"   autocmd QuickFixCmdPost    l* nested lwindow
+" augroup END
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+autocmd FileType cpp setlocal commentstring=//\ %s
 
 " Doxygen setup
 let g:DoxygenToolkit_briefTag_pre=""

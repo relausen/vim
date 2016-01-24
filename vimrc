@@ -116,7 +116,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Languages
 " Syntax checker
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 " golang
 Plugin 'fatih/vim-go'
@@ -232,7 +232,7 @@ set shiftwidth=4
 "   autocmd QuickFixCmdPost [^l]* nested cwindow
 "   autocmd QuickFixCmdPost    l* nested lwindow
 " augroup END
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:ycm_global_ycm_extra_conf = '~/vim/ycm_extra_conf.py'
 autocmd FileType cpp setlocal commentstring=//\ %s
 

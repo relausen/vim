@@ -167,6 +167,11 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Let's use ag instead of ack, if present
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Disable Auto Pairs AutoPairsFastWrap to make letter 'å' work
 let g:AutoPairsShortcutFastWrap='<Nop>'
 

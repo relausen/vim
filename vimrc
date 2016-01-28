@@ -1,8 +1,8 @@
 let mapleader = ","
 
-" Easier access to [ and ] on Danish keyboards
-nmap æ [
-nmap ø ]
+" Easier access to [ and ] in normal mode on Danish keyboards
+nmap ø [
+nmap å ]
 
 " An example for a vimrc file.
 "

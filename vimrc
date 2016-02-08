@@ -126,6 +126,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/SWIG-syntax'
 " Doxygen
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+" MediaWiki
+Plugin 'chikamichi/mediawiki.vim'
 
 " VCS
 " Git

@@ -153,6 +153,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/argtextobj.vim.git'
 Plugin 'mileszs/ack.vim'
+Plugin 'keith/tmux.vim'
 
 " -Themes
 Plugin 'morhetz/gruvbox'

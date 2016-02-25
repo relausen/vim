@@ -1,5 +1,9 @@
 let mapleader = ","
 
+" Easier access to [ and ] in normal mode on Danish keyboards
+nmap ø [
+nmap å ]
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -112,17 +116,23 @@ Plugin 'gmarik/Vundle.vim'
 
 " Languages
 " Syntax checker
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 " golang
 Plugin 'fatih/vim-go'
 " Python
 Plugin 'davidhalter/jedi-vim'
 " SWIG interface files
 Plugin 'vim-scripts/SWIG-syntax'
+" Doxygen
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+" MediaWiki
+Plugin 'chikamichi/mediawiki.vim'
 
 " VCS
 " Git
 Plugin 'tpope/vim-fugitive'
+
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -133,13 +143,17 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-abolish'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'artoj/qmake-syntax-vim'
-Plugin 'Auto-Pairs'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-scripts/argtextobj.vim.git'
+Plugin 'mileszs/ack.vim'
+Plugin 'keith/tmux.vim'
 
 " -Themes
 Plugin 'morhetz/gruvbox'
@@ -156,8 +170,16 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Let's use ag instead of ack, if present
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Disable Auto Pairs AutoPairsFastWrap to make letter 'å' work
+let g:AutoPairsShortcutFastWrap='<Nop>'
+
 " Set path to something sensible
-set path=.,,**
+set path=.,/usr/local/include,,**
 
 " Allow switching away from edited buffer
 set hidden
@@ -185,7 +207,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 set noshowmode
-" set timeoutlen=50
+set timeoutlen=1000
+set ttimeoutlen=10
 
 " Change vim's stupid tab completion to a more sensible behaviour
 set wildmode=longest,list,full
@@ -200,17 +223,31 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 " Show line numbers
 set number
 
+" Text width
+set textwidth=95
+" augroup textwidth_autocmds
+"   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+"   autocmd BufEnter * match OverLength /\%96v.*/
+" augroup END
+
 " Sensible tabs
 set tabstop=4
 set shiftwidth=4
 
 " C++ setup
-set errorformat^=%-G%f:%l:\ warning:%m
-augroup make
-  au!
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
-augroup END
+" set errorformat^=%-G%f:%l:\ warning:%m
+" augroup make
+"   au!
+"   autocmd QuickFixCmdPost [^l]* nested cwindow
+"   autocmd QuickFixCmdPost    l* nested lwindow
+" augroup END
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:ycm_global_ycm_extra_conf = '~/vim/ycm_extra_conf.py'
+autocmd FileType cpp setlocal commentstring=//\ %s
+
+" Doxygen setup
+let g:DoxygenToolkit_briefTag_pre=""
+map <leader>d :Dox<CR>
 
 " Write before commands
 set autowrite

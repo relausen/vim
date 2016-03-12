@@ -247,6 +247,7 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 
 " Doxygen setup
 let g:DoxygenToolkit_briefTag_pre=""
+let g:load_doxygen_syntax=1
 map <leader>d :Dox<CR>
 
 " Write before commands

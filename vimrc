@@ -235,13 +235,13 @@ set tabstop=4
 set shiftwidth=4
 
 " C++ setup
-" set errorformat^=%-G%f:%l:\ warning:%m
+set errorformat^=%-G%f:%l:\ warning:%m
 " augroup make
 "   au!
 "   autocmd QuickFixCmdPost [^l]* nested cwindow
 "   autocmd QuickFixCmdPost    l* nested lwindow
 " augroup END
-" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:ycm_global_ycm_extra_conf = '~/vim/ycm_extra_conf.py'
 autocmd FileType cpp setlocal commentstring=//\ %s
 

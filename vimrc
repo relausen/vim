@@ -1,9 +1,5 @@
 let mapleader = ","
 
-" Easier access to [ and ] in normal mode on Danish keyboards
-nmap ø [
-nmap å ]
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -23,6 +19,19 @@ endif
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+" Stop the bloody beeping
+set visualbell
+
+" Easier access to [ and ] in normal mode on Danish keyboards
+nmap ø [
+nmap å ]
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -224,7 +233,7 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 set number
 
 " Text width
-set textwidth=95
+" set textwidth=95
 " augroup textwidth_autocmds
 "   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 "   autocmd BufEnter * match OverLength /\%96v.*/
